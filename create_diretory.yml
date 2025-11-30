@@ -1,0 +1,11 @@
+---
+- name: Create directory on target host
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Ensure directory exists
+      ansible.builtin.file:
+        path: /opt/myapp/logs
+        state: directory
+        mode: '0755'
